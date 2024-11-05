@@ -74,6 +74,7 @@ describe("normalizeAndValidateConfig()", () => {
 				upstream_protocol: "http",
 				host: undefined,
 			},
+			container_app: [],
 			cloudchamber: {},
 			durable_objects: {
 				bindings: [],
