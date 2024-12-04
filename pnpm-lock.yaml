@@ -674,8 +674,8 @@ importers:
   fixtures/worker-app:
     dependencies:
       cookie:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       isomorphic-random-example:
         specifier: workspace:^
         version: link:../isomorphic-random-example
@@ -953,8 +953,8 @@ importers:
         specifier: ^0.6.0
         version: 0.6.0
       cookie:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       promjs:
         specifier: ^0.4.2
         version: 0.4.2
@@ -1255,8 +1255,8 @@ importers:
         specifier: ^0.6.0
         version: 0.6.0
       cookie:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       itty-router:
         specifier: ^4.0.13
         version: 4.0.17
@@ -4775,8 +4775,8 @@ packages:
     resolution: {integrity: sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==}
     engines: {node: '>= 0.6'}
 
-  cookie@1.0.1:
-    resolution: {integrity: sha512-Xd8lFX4LM9QEEwxQpF9J9NTUh8pmdJO0cyRJhFiDoLTk2eH8FXlRv2IFGYVadZpqI3j8fhNrSdKCeYPxiAhLXw==}
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
 
   core-js-pure@3.32.2:
@@ -12072,7 +12072,7 @@ snapshots:
 
   cookie@0.7.1: {}
 
-  cookie@1.0.1: {}
+  cookie@1.0.2: {}
 
   core-js-pure@3.32.2: {}
 
