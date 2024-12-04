@@ -78,7 +78,7 @@
 		"magic-string": "^0.30.5",
 		"open": "^8.4.0",
 		"recast": "^0.22.0",
-		"semver": "^7.6.1",
+		"semver": "^7.6.2",
 		"undici": "catalog:default",
 		"vite-tsconfig-paths": "^4.0.8",
 		"which-pm-runs": "^1.1.0",
