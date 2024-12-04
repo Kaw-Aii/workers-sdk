@@ -232,8 +232,10 @@ export async function versionsDeployHandler(args: VersionsDeployArgs) {
 
 function getConfig(args: Pick<VersionsDeployArgs, "config" | "name">) {
 	const configPath =
-		args.config || (args.name && findWranglerConfig(path.dirname(args.name)));
-	const config = readConfig(configPath, args);
+		args.config ||
+		(args.name &&
+			findWranglerConfig(path.dirname(args.name), { useRedirect: true }));
+	const config = readConfig(configPath, args, { useRedirect: true });
 
 	return config;
 }

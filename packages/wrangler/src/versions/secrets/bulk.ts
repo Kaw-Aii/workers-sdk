@@ -43,7 +43,7 @@ export async function versionsSecretPutBulkHandler(
 	args: StrictYargsOptionsToInterface<typeof versionsSecretsPutBulkOptions>
 ) {
 	await printWranglerBanner();
-	const config = readConfig(args.config, args, false, true);
+	const config = readConfig(args.config, args, { hideWarnings: true });
 
 	const scriptName = getLegacyScriptName(args, config);
 	if (!scriptName) {

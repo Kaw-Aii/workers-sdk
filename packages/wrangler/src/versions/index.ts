@@ -201,8 +201,9 @@ async function versionsUploadHandler(
 
 	const configPath =
 		args.config ||
-		(args.script && findWranglerConfig(path.dirname(args.script)));
-	const config = readConfig(configPath, args);
+		(args.script &&
+			findWranglerConfig(path.dirname(args.script), { useRedirect: true }));
+	const config = readConfig(configPath, args, { useRedirect: true });
 	const entry = await getEntry(args, config, "versions upload");
 	await metrics.sendMetricsEvent(
 		"upload worker version",

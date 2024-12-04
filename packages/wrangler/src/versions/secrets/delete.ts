@@ -40,7 +40,7 @@ export async function versionsSecretDeleteHandler(
 	args: StrictYargsOptionsToInterface<typeof versionsSecretsDeleteOptions>
 ) {
 	await printWranglerBanner();
-	const config = readConfig(args.config, args, false, true);
+	const config = readConfig(args.config, args, { hideWarnings: true });
 
 	const scriptName = getLegacyScriptName(args, config);
 	if (!scriptName) {

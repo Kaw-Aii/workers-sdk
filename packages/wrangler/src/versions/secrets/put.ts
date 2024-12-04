@@ -41,7 +41,7 @@ export async function versionsSecretPutHandler(
 	args: StrictYargsOptionsToInterface<typeof versionsSecretsPutOptions>
 ) {
 	await printWranglerBanner();
-	const config = readConfig(args.config, args, false, true);
+	const config = readConfig(args.config, args, { hideWarnings: true });
 
 	const scriptName = getLegacyScriptName(args, config);
 	if (!scriptName) {
