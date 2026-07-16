@@ -16,15 +16,23 @@ describe('Frogbot worker', () => {
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
 		const text = await response.text();
+		// Check for frog emoji greeting
 		expect(text).toContain('🐸');
+		// Check for ASCII frog art "ribbit!"
 		expect(text).toContain('ribbit!');
+		// Check for a fun frog fact
+		expect(text).toContain('🪷');
 	});
 
 	it('responds with a frog greeting (integration style)', async () => {
 		const response = await SELF.fetch('https://example.com');
 		const text = await response.text();
+		// Check for frog emoji greeting
 		expect(text).toContain('🐸');
+		// Check for ASCII frog art "ribbit!"
 		expect(text).toContain('ribbit!');
+		// Check for a fun frog fact
+		expect(text).toContain('🪷');
 	});
 
 	it('includes fun frog headers', async () => {
