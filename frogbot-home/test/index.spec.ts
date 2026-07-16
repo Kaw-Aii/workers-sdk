@@ -7,19 +7,44 @@ import worker from '../src/index';
 // `Request` to pass to `worker.fetch()`.
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
-describe('Hello World worker', () => {
-	it('responds with Hello World! (unit style)', async () => {
+describe('Frogbot worker', () => {
+	it('responds with a frog greeting (unit style)', async () => {
 		const request = new IncomingRequest('http://example.com');
 		// Create an empty context to pass to `worker.fetch()`.
 		const ctx = createExecutionContext();
 		const response = await worker.fetch(request, env, ctx);
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
-		expect(await response.text()).toMatchInlineSnapshot(`"Hello World!"`);
+		const text = await response.text();
+		// Check for frog emoji greeting
+		expect(text).toContain('🐸');
+		// Check for ASCII frog art "ribbit!"
+		expect(text).toContain('ribbit!');
+		// Check for a fun frog fact
+		expect(text).toContain('🪷');
 	});
 
-	it('responds with Hello World! (integration style)', async () => {
+	it('responds with a frog greeting (integration style)', async () => {
 		const response = await SELF.fetch('https://example.com');
-		expect(await response.text()).toMatchInlineSnapshot(`"Hello World!"`);
+		const text = await response.text();
+		// Check for frog emoji greeting
+		expect(text).toContain('🐸');
+		// Check for ASCII frog art "ribbit!"
+		expect(text).toContain('ribbit!');
+		// Check for a fun frog fact
+		expect(text).toContain('🪷');
+	});
+
+	it('includes fun frog headers', async () => {
+		const response = await SELF.fetch('https://example.com');
+		expect(response.headers.get('X-Frog-Mood')).toBe('hoppy');
+		expect(response.headers.get('Content-Type')).toBe('text/plain; charset=utf-8');
+	});
+
+	it('includes ASCII frog art', async () => {
+		const response = await SELF.fetch('https://example.com');
+		const text = await response.text();
+		expect(text).toContain('@..@');
+		expect(text).toContain('( >__< )');
 	});
 });
